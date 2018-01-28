@@ -10,11 +10,13 @@ function beepBoop(number){
   }
 }
 
-// function beepBoopRange(number){
-//   for(let current = 0; current <= number; current++){
-//
-//   }
-// }
+function beepBoopRange(number){
+  var output = [];
+  for(let current = 0; current <= number; current++){
+    output.push(beepBoop(current));
+  }
+  return output;
+}
 
 $(document).ready(function(){
   //do stuff
