@@ -19,5 +19,25 @@ function beepBoopRange(number){
 }
 
 $(document).ready(function(){
-  //do stuff
+  $("#number-input").submit(function(event){
+    event.preventDefault();
+    var number = parseInt($("#number-input input[name=number-input]").val());
+    $("#number-input input[name=number-input]").val("");
+    if(isNaN(number)){
+      alert("Please enter a valid number greater than zero.");
+      return;
+    }
+    var result = beepBoopRange(number);
+
+    if($("#number-input input[name=reversed-check]").is(":checked")){
+      result.reverse();
+    }
+
+    $("#output h3").text("Your number: " + number);
+    var output = $("#output ul");
+    output.text("");
+    result.forEach(function(item){
+      output.append("<li>" + item + "</li>");
+    });
+  });
 });
