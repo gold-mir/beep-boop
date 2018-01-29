@@ -1,6 +1,8 @@
+var name = "Dave";
+
 function beepBoop(number){
   if(number % 3 === 0 && number !== 0){
-    return "I'm sorry Dave, I'm afraid I can't do that.";
+    return "I'm sorry " + name + ", I'm afraid I can't do that.";
   } else if (number.toString().match(/1/) !== null){
     return "Boop!";
   } else if (number.toString().match(/0/) !== null){
@@ -27,6 +29,13 @@ $(document).ready(function(){
       alert("Please enter a valid number greater than zero.");
       return;
     }
+    var userName = $("#number-input input[name=name-input]").val();
+    if(userName !== ""){
+      name = userName;
+    } else {
+      name = "Dave";
+    }
+
     var result = beepBoopRange(number);
 
     if($("#number-input input[name=reversed-check]").is(":checked")){
