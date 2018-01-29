@@ -11,27 +11,41 @@
     <title>Beep! Boop!</title>
   </head>
   <body>
-    <div>
-      <form id="number-input">
-        <div>
-          Enter your name (optional): <input type="text" name="name-input">
+    <div class="container">
+      <h1 id="title">Beep! Boop!</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card card-block">
+            <form id="number-input">
+              <div>
+                Enter your name (optional): <input type="text" name="name-input">
+              </div>
+              <div>
+                Enter a number: <input type="number" min="0" name="number-input" required>
+              </div>
+              <div>
+                <label><input type="checkbox" name="reversed-check" value="reversed"> Reversed? </label>
+              </div>
+              <div>
+                <button type="submit" name="button">Show me!</button>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-          Enter a number: <input type="number" min="0" name="number-input" required>
-        </div>
-        <div>
-          <label><input type="checkbox" name="reversed-check" value="reversed"> Reversed? </label>
-        </div>
-        <div>
-          <button type="submit" name="button">Show me!</button>
-        </div>
-      </form>
-    </div>
-    <div id="output">
-      <h3></h3>
-      <ul start="0">
+        <div id="output" class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+            <h3>Enter a number to get started</h3>
+            </div>
+            <div class="card-block">
+              <ul start="0">
 
-      </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
