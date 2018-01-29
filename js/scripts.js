@@ -1,15 +1,17 @@
 var name = "Dave";
 
 function beepBoop(number){
+  var result = {value: number, output: number};
   if(number % 3 === 0 && number !== 0){
-    return "I'm sorry " + name + ", I'm afraid I can't do that.";
+    result.output = "I'm sorry " + name + ", I'm afraid I can't do that.";
   } else if (number.toString().match(/1/) !== null){
-    return "Boop!";
+    result.output = "Boop!";
   } else if (number.toString().match(/0/) !== null){
-    return "Beep!";
+    result.output = "Beep!";
   } else {
-    return number.toString();
+    result.output = number.toString();
   }
+  return result;
 }
 
 function beepBoopRange(number){
@@ -46,7 +48,7 @@ $(document).ready(function(){
     var output = $("#output ul");
     output.text("");
     result.forEach(function(item){
-      output.append("<li>" + item + "</li>");
+      output.append("<li>" + item.value + ": " + item.output + "</li>");
     });
   });
 });
