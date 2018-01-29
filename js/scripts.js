@@ -5,7 +5,12 @@ function beepBoop(number){
   if(number % 3 === 0 && number !== 0){
     result.output = "I'm sorry " + name + ", I'm afraid I can't do that.";
   } else if (number.toString().match(/1/) !== null){
-    result.output = "Boop!";
+    if(number % 2 === 0){
+      result.output = "BOOP!!!";
+    } else {
+      result.output = "Boop!";
+
+    }
   } else if (number.toString().match(/0/) !== null){
     result.output = "Beep!";
   } else {
